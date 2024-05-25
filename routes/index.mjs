@@ -1,10 +1,19 @@
 import express from 'express';
 import STRUCTURE from '../Structure.mjs';
 import { cleanUpSpecialChars } from '../Helpers.mjs';
-
+import path from 'path';
+import { fileURLToPath } from 'url';
+import { dirname } from 'path';
 const indexRouter = express.Router();
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 /* GET home page. */
+indexRouter.get('/', function(req, res, next) {
+  const filePath = path.join(__dirname, '../public', 'home.html')
+  res.sendFile(filePath)
+});
+
 indexRouter.get('/all', function(req, res, next) {
   res.send(STRUCTURE)
 })

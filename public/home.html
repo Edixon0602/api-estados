@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>API estados de Venezuela - Edixon Serrano</title>
+  <link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+    header,
+    footer {
+      background-color: #1f2937;
+      color: #ffffff;
+      padding: 20px 0;
+      text-align: center;
+    }
+
+    header a,
+    footer a {
+      color: #ffffff;
+    }
+
+    body {
+      font-family: Poppins;
+      padding: 0;
+      margin: 0;
+    }
+
+    main {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    a {
+      color: #1f2937;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      text-align: center;
+      margin: 0;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="container">
+      <h1>API estados de Venezuela</h1>
+      <p>Esta API ofrece tres endpoints para obtener todas las entidades (estados, municipios y parroquias) que conforman el territorio de Venezuela</p>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <h2>Endpoints</h2>
+      <h3>GET /all</h3>
+      <p>Retorna todas las entidades</p>
+      <p><a href="https://api-venezuela.edixonserrano.com/all" target="_blank">https://api-venezuela.edixonserrano.com/all</a>
+      </p>
+
+      <h3>GET /state/:estado</h3>
+      <p>Retorna la informacion de un estado especifico pasando el nombre de este como parámetro. En caso de que el nombre del estado contenga espacios en el nombre estos deben ser eliminados, por ejemplo: Nueva Esparta sera NuevaEsparta. Minúsculas y mayúsculas no tienen relevancia.</p>
+      <p><a href="https://api-venezuela.edixonserrano.com/state/Carabobo"
+          target="_blank">https://api-venezuela.edixonserrano.com/state/{estado}</a>
+      </p>
+
+      <h3>GET /state/:estado/:municipio</h3>
+      <p>Retorna la informacion de un municipio especifico pasando el nombre de este como parámetro, antecedido del nombre del estado. En caso de que el nombre del municipio contenga espacios en el nombre estos deben ser eliminados, por ejemplo: Carlos Arvelo sera CarlosArvelo. Minúsculas y mayúsculas no tienen relevancia.</p>
+      <p><a href="https://api-venezuela.edixonserrano.com/state/carabobo/valencia"
+          target="_blank">https://api-venezuela.edixonserrano.com/state/{estado}/{municipio}</a>
+      </p>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>Desarrollado por <a href="https://edixonserrano.com" target="_blank">Edixon Serrano</a></p>
+    </div>
+  </footer>
+</body>
+
+</html>
